@@ -46,55 +46,81 @@
             </a>
 
     </nav>
+    <!----------------------------------#HERO--------------------------------------------->
 
-    <center>
-        <section class="hero  ">
-            <div class="container">
-                <div class="row ">
-                    <div class="col-md-6  col-sm-12 ">
-                        <div id="herip" >
-                            <h2 class="display-5 mt-5 lead text-light d-flex justify-content-center">النجاح يبدأ بالخطوة
-                                الاولى</h2>
-                            <p class="lead d-flex justify-content-center mt-2  "> ارادة قوية لا يتطرق اليها ضعف <i
-                                    class="las la-marker "></i></p>
-                            <button class="btn bg-transparent  shadow-lg  " style="border-radius: 16px;">
-                                <p class="mb-sm-5 mb-md-1 fs-5 " id="btoni"> انضم لنا </p>
-                            </button>
-                        </div>
-
+    <section class="hero  ">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-6  col-sm-12 text-center ">
+                    <div id="herip">
+                        <h2 class="display-5 mt-5 lead text-light d-flex justify-content-center">النجاح يبدأ بالخطوة
+                            الاولى</h2>
+                        <p class="lead d-flex justify-content-center mt-2  "> ارادة قوية لا يتطرق اليها ضعف <i
+                                class="las la-marker "></i></p>
+                        <button class="btn bg-transparent  shadow-lg  " id="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                            style="border-radius: 16px;">
+                            <p class="mb-sm-5 mb-md-1 fs-5 " id="btoni"> انضم لنا </p>
+                        </button>
                     </div>
-                    <div class="col-md-6 col-sm-12">
-                        <img class="img-fluid mt-5" style="height: 240px;" src="assest/bg5.svg"
-                            alt=""></div>
+                </div>
+                <div class="col-md-6 col-sm-12 text-center">
+                    <img class="img-fluid mt-5" style="height: 240px;" src="assest/bg5.svg" alt="">
                 </div>
             </div>
-        </section>
-        <section class="herop" style="margin-top: 200px;">
-            <div class="container">
+        </div>
+    </section>
+    <!------------------------------------END-HERO-------------------------------------------------->
+    <!------------------------------------ OFFCANVAS -------------------------------------------------->
+    <div class="offcanvas offcanvas-end text-center" style="        background-color: #4f9686;
+" tabindex="0" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header ">
+            <h5 id="offcanvasRightLabel" class="text-center float-start"> أهلا وسهلا<i class="las la-user"></i></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class="btn btn-outline-dark w-50 my-3">تسجيل الدخول</button>
+                </div>
+                <div class="col-12">
+                    <button type="button" class="btn btn-outline-dark w-50">مستخدم جديد</button>
 
-                <div class="row shadow-lg ">
-                    <div class="col-md-4 col-sm-12 pt-3 shadow-lg rou " style="border-radius: 13px;">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-----------------------------------END-OFFCANVAS-------------------------------------------------->
+    <!------------------------------------ CARDS -------------------------------------------------->
+
+    <section class="herop" style="margin-top: 200px;">
+        <div class="container">
+
+            <div class="row shadow-lg ">
+                <div class="col-md-4 col-sm-12 pt-3 shadow-lg text-center " style="border-radius: 13px;">
+                    <a class="text-decoration-none  text-dark" href="">
                         <img src="assest/calculator.svg" style="height: 7rem;" class="img-fluid" alt="">
                         <p class="mt-3 fw-bolder fs-5 ">حساب المعدل</p>
-                        
-
-                    </div>
-                    <div class="col-md-4 col-sm-12 pt-3"style="border-radius: 13px;" >
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-12 pt-3 text-center" style="border-radius: 13px;">
+                    <a class="text-decoration-none  text-dark" href="">
                         <img src="assest/graduation-cap.svg" style="height: 7rem; color: cornsilk;"
                             class="img-fluid text-light" alt="">
                         <p class="mt-3 fw-bolder fs-5">الخطة الأمثل</p>
-                    </div>
-                    <div class="col-md-4 col-sm-12 pt-3 shadow-lg" style="border-radius: 13px;">
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-12 pt-3 shadow-lg text-center" style="border-radius: 13px;">
+                    <a class="text-decoration-none  text-dark" href="">
                         <img src="assest/chart-histogram.svg" style="height: 7rem;" class="img-fluid" alt="">
                         <p class="mt-3 fw-bolder fs-5">التصويت</p>
-                    </div>
+                    </a>
                 </div>
             </div>
-            </div>
-
-            </div>
-        </section>
-
+        </div>
+    </section>
+    <!------------------------------------ END CARDS -------------------------------------------------->
 
 
 
@@ -123,10 +149,15 @@
 
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-            </script>
-        <script src="assest/main.js"></script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+    <script src="assest/main.js"></script>
 </body>
 
 </html>

@@ -5,7 +5,7 @@
 
 
 
-button {
+#button {
     width: 140px;
     height: 45px;
     font-size: 23px;
@@ -13,7 +13,7 @@ button {
     border-radius: 16px;
     outline: none;
     background: transparent;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
     position: relative;
@@ -21,7 +21,7 @@ button {
     z-index: 1;
 }
 
-button::before {
+#button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -34,14 +34,14 @@ button::before {
     transition: all 0.5s;
 }
 
-button:hover::before {
+#button:hover::before {
     width: 100%;
 
 }
 
 
 
-button:active:before {
+#button:active:before {
     background: #b9b9b9;
     border-radius: 16px;
 }
