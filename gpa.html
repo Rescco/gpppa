@@ -83,9 +83,9 @@
                         <label for="">عدد الساعات</label>
                     </div>
                     <div class="text-center">
-                        <button type="button" onclick="cla()" class="btn btn-outline-light mt-3 "> احسب نقاطي</button>
+                        <button type="button" onload="cla()" class="btn btn-outline-light mt-3 "> احسب نقاطي</button>
                         </button>
-                        <h2 id='result'></h2>
+                        <span onload="countHours()" id='result'>0</span>
                         <h2 id='nido' class="text-light mt-4  lead"></h2>
 
                     </div>
@@ -109,8 +109,8 @@
                                 <td><input type="number" class="form-control  numberOfHours" style="width: 90px;"
                                         id="floatingHours" placeholder="الساعات">
                                 </td>
-                                <td><input type="number" class="form-control  " style="width: 90px;" id="floatingHours"
-                                        placeholder="الدرجة"></td>
+                                <td><input type="number" class="form-control  dgrees" style="width: 90px;"
+                                        id="floatingHours" placeholder="الدرجة"></td>
 
                             </tr>
                             <tr>
@@ -123,7 +123,7 @@
 
                             </tr>
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">3</th>
                                 <td><input type="number" class="form-control  numberOfHours" style="width: 90px;"
                                         id="floatingHours" placeholder="الساعات">
                                 </td>
@@ -132,7 +132,7 @@
 
                             </tr>
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">4</th>
                                 <td><input type="number" class="form-control  numberOfHours" style="width: 90px;"
                                         id="floatingHours" placeholder="الساعات">
                                 </td>
@@ -145,6 +145,8 @@
                         </tbody>
                     </table>
                     <button class=" btn btn-outline-light " id="addRow" onclick="addRow()">+</button>
+                    <button class=" btn btn-outline-light " id="addRow" onclick="removeRow()">-</button>
+
 
                 </div>
                 <div class="container-fluid bg-white mt-2 shadow-lg" style="height: 7px; border-radius: 50px;">.</div>
@@ -177,19 +179,22 @@
     <script>
 
 
+        let tabel = document.querySelector('table');
         /// حساب الساعات 
         let totalHours = Number(0);// لتحويله الى رقم عشان اقدر اجمع 
 
-        function result() {
-            for (let index = 0; index < table.querySelectorAll("tbody tr").length; index++) {
-                document.getElementsByClassName('numberOfHours')[index].value ?
-                    totalHours += parseInt(document.getElementsByClassName('numberOfHours')[index].value)
-                    : 0
-
-            }
-
+function  countHours(){      
+    
+    for (let index = 0; index < table.querySelectorAll("tbody tr").length; index++) {
+            document.getElementsByClassName('numberOfHours')[index].value ?
+                totalHours += parseInt(document.getElementsByClassName('numberOfHours')[index].value)
+                : 0
 
         }
+        document.getElementById('result').innerHTML = totalHours;}
+
+
+
         ////حساب نقاط المعدل الحالي
 
         function cla() {
@@ -199,8 +204,27 @@
             document.getElementById('nido').innerHTML = "النقاط " + cureentGpa * cureentHours;
         }
 
+        let inputHours = document.getElementById('numberOfHours');
+        let count = 5;
 
+        function addRow() {
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
 
+            cell1.innerHTML = count;
+            cell2.innerHTML = inputHours;
+            cell3.innerHTML = "NEW CELL2";
+
+            count++;
+        }
+        function removeRow() {
+
+            var row = table.deleteRow(-1);
+            count--;
+
+        }
 
 
 
