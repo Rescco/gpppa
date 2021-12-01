@@ -75,18 +75,20 @@
                 <div class="col-md-6 col-sm-12 mt-3 px-5 flex-column justify-content-center   ">
 
                     <div class="form-floating mb-3 flex-column mt-md-5 labelO">
-                        <input type="number" class="form-control " id="cGpa" placeholder="name@example.com">
+                        <input type="number" oninput="cla()" class="form-control " id="cGpa"
+                            placeholder="name@example.com">
                         <label for="">المعدل الحالي</label>
                     </div>
                     <div class="form-floating ">
-                        <input type="number" class="form-control" id="cHours" placeholder=".">
+                        <input type="number" oninput="cla()" class="form-control" id="cHours" placeholder=".">
                         <label for="">عدد الساعات</label>
                     </div>
                     <div class="text-center">
-                        <button type="button" onclick="cla" class="btn btn-outline-light mt-3 "> احسب نقاطي</button>
+
+                        <button type="button" onclick="countHours()" class="btn btn-outline-light mt-3 "> احسب </button>
                         </button>
                         <span onload="countHours()" id='result'>0</span>
-                        <h2 id='nido' class="text-light mt-4  lead">00</h2>
+                        <h2 id='nido' class="text-light mt-4  lead"></h2>
 
                     </div>
 
@@ -163,7 +165,7 @@
 
                     <div class="row bg-light mt-2 ">
                         <div class="  d-flex bg-light justify-content-evenly shadow-lg mt-2">
-                            <h3 class="lead "> مجموع الساعات :</h3>
+                            <h3 id="tHour" class="lead "> مجموع الساعات :</h3>
                             <h3 class="lead ">عدد النقاط :</h3>
                         </div>
                     </div>
@@ -182,16 +184,31 @@
         let tabel = document.querySelector('table');
         /// حساب الساعات 
         let totalHours = Number(0);// لتحويله الى رقم عشان اقدر اجمع 
+        totalHours = 0;
+        function countHours() {
+            let cureentHours = document.getElementById('cHours').value;
+            let totalHours = Number(0);// لتحويله الى رقم عشان اقدر اجمع 
+            totalHours = 0;
+            for (let index = 0; index < table.querySelectorAll("tbody tr").length; index++) {
+                document.getElementsByClassName('numberOfHours')[index].value ?
+                    totalHours += parseInt(document.getElementsByClassName('numberOfHours')[index].value)
+                    : 0
 
-function  countHours(){      
-    
-    for (let index = 0; index < table.querySelectorAll("tbody tr").length; index++) {
-            document.getElementsByClassName('numberOfHours')[index].value ?
-                totalHours += parseInt(document.getElementsByClassName('numberOfHours')[index].value)
-                : 0
+                document.getElementById('result').innerHTML = totalHours;
+            }
+
+
+            let t = totalHours + cureentHours;
+            let b = parseInt(cureentHours);
+            console.log(b);
+            console.log(totalHours);
+            console.log(totalHours + b);
+
+
+            document.getElementById('tHour').innerHTML = '<h3 class="lead "> مجموع الساعات : ' + (totalHours + b) + '</h3>'
+
 
         }
-        document.getElementById('result').innerHTML = totalHours;}
 
 
 
@@ -202,11 +219,18 @@ function  countHours(){
             let cureentGpa = document.getElementById('cGpa').value;
             let cureentHours = document.getElementById('cHours').value;
 
-          document.getElementById('nido').innerText = "النقاط " + cureentGpa * cureentHours;
+            document.getElementById('nido').innerText = "النقاط " + cureentGpa * cureentHours;
+        }
+
+        // حساب عدد الساعات الكلي 
+        function allHours() {
+
+
+
         }
 
 
-                                        // اضافة صف جديد
+        // اضافة صف جديد
         let count = 5;
 
         function addRow() {
@@ -215,15 +239,15 @@ function  countHours(){
             var cell2 = row.insertCell(1);
             var cell3 = row.insertCell(2);
 
-            
-            cell1.innerHTML = '<th class="table lead text-danger">'+count+'</th>';   
-            cell2.innerHTML='<input type="number" class="form-control  numberOfHours" style="width: 90px;id="floatingHours" placeholder="الساعات">';
+
+            cell1.innerHTML = '<th class="table lead text-danger">' + count + '</th>';
+            cell2.innerHTML = '<input type="number" class="form-control  numberOfHours" style="width: 90px;id="floatingHours" placeholder="الساعات">';
             cell3.innerHTML = '<input type="number" class="form-control  " style="width: 90px;" id="floatingHours" placeholder = "الدرجة" >'
 
             count++;
         }
 
-                             // حذف صف جديد
+        // حذف صف جديد
 
         function removeRow() {
 
@@ -231,6 +255,7 @@ function  countHours(){
             count--;
 
         }
+
 
 
 
