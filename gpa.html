@@ -73,21 +73,20 @@
         <div class="container " id="bn">
             <div class="row">
                 <div class="col-md-6 col-sm-12 mt-3 px-5 flex-column justify-content-center   ">
-
                     <div class="form-floating mb-3 flex-column mt-md-5 labelO">
                         <input type="number" oninput="cla()" class="form-control " id="cGpa"
                             placeholder="name@example.com">
                         <label for="">المعدل الحالي</label>
                     </div>
                     <div class="form-floating ">
-                        <input type="number" oninput="cla()" class="form-control" id="cHours" placeholder=".">
-                        <label for="">عدد الساعات</label>
+                        <input type="number" oninput="cla()"  class="form-control" id="cHours" placeholder=".">
+                        <label oninput=" countHours()" for="">عدد الساعات</label>
                     </div>
                     <div class="text-center">
 
-                        <button type="button" onclick="countHours()" class="btn btn-outline-light mt-3 "> احسب </button>
+                        <button type="button" class="btn btn-outline-light mt-3"> احسب </button>
                         </button>
-                        <span onload="countHours()" id='result'>0</span>
+                        <span id='result'>0</span>
                         <h2 id='nido' class="text-light mt-4  lead"></h2>
 
                     </div>
@@ -108,7 +107,7 @@
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td><input type="number" class="form-control  numberOfHours" style="width: 90px;"
+                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours()" style="width: 90px;"
                                         id="floatingHours" placeholder="الساعات">
                                 </td>
                                 <td><input type="number" class="form-control  dgrees" style="width: 90px;"
@@ -117,16 +116,16 @@
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td><input type="number" class="form-control  numberOfHours" style="width: 90px;"
+                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours()" style="width: 90px;"
                                         id="floatingHours" placeholder="الساعات">
                                 </td>
-                                <td><input type="number" class="form-control  " style="width: 90px;" id="floatingHours"
+                                <td><input type="number" class="form-control  "  style="width: 90px;" id="floatingHours"
                                         placeholder="الدرجة"></td>
 
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
-                                <td><input type="number" class="form-control  numberOfHours" style="width: 90px;"
+                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours()" style="width: 90px;"
                                         id="floatingHours" placeholder="الساعات">
                                 </td>
                                 <td><input type="number" class="form-control  " style="width: 90px;" id="floatingHours"
@@ -135,7 +134,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
-                                <td><input type="number" class="form-control  numberOfHours" style="width: 90px;"
+                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours()" style="width: 90px;"
                                         id="floatingHours" placeholder="الساعات">
                                 </td>
                                 <td><input type="number" class="form-control  " style="width: 90px;" id="floatingHours"
@@ -234,7 +233,7 @@
 
 
             cell1.innerHTML = '<th class="table lead text-danger">' + count + '</th>';
-            cell2.innerHTML = '<input type="number" class="form-control  numberOfHours" style="width: 90px;id="floatingHours" placeholder="الساعات">';
+            cell2.innerHTML = '<input type="number" class="form-control   numberOfHours" oninput="countHours()" style="width: 90px;id="floatingHours" placeholder="الساعات">';
             cell3.innerHTML = '<input type="number" class="form-control  " style="width: 90px;" id="floatingHours" placeholder = "الدرجة" >'
 
             count++;
