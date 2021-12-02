@@ -25,7 +25,7 @@ function countHours() {
     let sumAllHours = NaN;
     sumAllHours = totalHours + b;
     if (isNaN(sumAllHours)) sumAllHours = "";
-    document.getElementById('tHour').innerHTML = '<p class="lead " style="font-size: 19px;"> مجموع الساعات : ' + sumAllHours + '</p>'
+    document.getElementById('tHour').innerHTML = '<p " style="font-size: 19px;"> مجموع الساعات : ' + sumAllHours + '</p>'
 
     return sumAllHours;
 }
