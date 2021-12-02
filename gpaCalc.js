@@ -24,8 +24,8 @@ function countHours() {
     let b = parseInt(cureentHours);
     let sumAllHours = NaN;
     sumAllHours = totalHours + b;
-    if (isNaN(sumAllHours)) sumAllHours = 0;
-    document.getElementById('tHour').innerHTML = '<h3 class="lead "> مجموع الساعات : ' + sumAllHours + '</h3>'
+    if (isNaN(sumAllHours)) sumAllHours = "";
+    document.getElementById('tHour').innerHTML = '<p class="lead " style="font-size: 19px;"> مجموع الساعات : ' + sumAllHours + '</p>'
 
     return sumAllHours;
 }
@@ -54,7 +54,7 @@ function Calgrade() {
 
     // حساب المعدل الفصلي 
     semesterGpa = (points / allHours);
-    if (isNaN(semesterGpa)) semesterGpa = 0;
+    if (isNaN(semesterGpa)) semesterGpa = "";
 
 
 
@@ -64,11 +64,11 @@ function Calgrade() {
     sumPoints = cla(points);
     sumHours = countHours();
     culmutivrGpa = sumPoints / sumHours;
-    if (isNaN(culmutivrGpa)) culmutivrGpa = 0;
+    if (isNaN(culmutivrGpa)) culmutivrGpa = "";
 
-    document.getElementById("semGpa").innerHTML = '<h3 id="semGpa" class="lead "> معدلك الفصلي : ' + semesterGpa.toFixed(2) + '</h3>';
-    document.getElementById('sumPoint').innerHTML = '<h3 id="sumPoint" class="lead ">عدد النقاط :' + sumPoints + '</h3>';
-    document.getElementById('culmGpa').innerHTML = '<h3 id="culmGpa" class="lead ">معدلك التراكمي :' + culmutivrGpa.toFixed(2) + '</h3>'
+    document.getElementById("semGpa").innerHTML = '<p id="semGpa"  style="font-size: 19px;"> معدلك الفصلي : ' + semesterGpa.toFixed(2) + '</p>';
+    document.getElementById('sumPoint').innerHTML = '<p id="sumPoint"  style="font-size: 19px;">عدد النقاط :' + sumPoints + '</p>';
+    document.getElementById('culmGpa').innerHTML = '<p id="culmGpa"  style="font-size: 19px;">معدلك التراكمي :' + culmutivrGpa.toFixed(2) + '</p>'
 
 
 }
@@ -110,7 +110,8 @@ function addRow() {
 function removeRow() {
 
     var row = table.deleteRow(-1);
-    count--;
+
+   
 
 }
 

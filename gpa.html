@@ -104,10 +104,12 @@
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours(),Calgrade()"
-                                        style="width: 90px;" id="floatingHours" placeholder="الساعات">
+                                <td><input type="number" class="form-control  numberOfHours"
+                                        oninput=" countHours(),Calgrade()" style="width: 90px;" id="floatingHours"
+                                        placeholder="الساعات">
                                 </td>
-                                <td><select class="subjectRating form-control" style="width: 98px;">
+                                <td><select class="subjectRating form-control" oninput="Calgrade()"
+                                        style="width: 98px;">
                                         <option value="">الدرجة</option>
                                         <option value=5>A+|95-100</option>
                                         <option value=4.75>A | 90-94</option>
@@ -123,10 +125,12 @@
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours(),Calgrade()"
-                                        style="width: 90px;" id="floatingHours" placeholder="الساعات">
+                                <td><input type="number" class="form-control  numberOfHours"
+                                        oninput=" countHours(),Calgrade()" style="width: 90px;" id="floatingHours"
+                                        placeholder="الساعات">
                                 </td>
-                                <td><select class="subjectRating form-control" style="width: 98px;">
+                                <td><select class="subjectRating form-control" oninput="Calgrade()"
+                                        style="width: 98px;">
                                         <option value="">الدرجة</option>
                                         <option value=5>A+|95-100</option>
                                         <option value=4.75>A | 90-94</option>
@@ -142,10 +146,12 @@
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
-                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours(),Calgrade()"
-                                        style="width: 90px;" id="floatingHours" placeholder="الساعات">
+                                <td><input type="number" class="form-control  numberOfHours"
+                                        oninput=" countHours(),Calgrade()" style="width: 90px;" id="floatingHours"
+                                        placeholder="الساعات">
                                 </td>
-                                <td><select class="subjectRating form-control " style="width: 98px;">
+                                <td><select class="subjectRating form-control " oninput="Calgrade()"
+                                        style="width: 98px;">
                                         <option value="">الدرجة</option>
                                         <option value=5>A+|95-100</option>
                                         <option value=4.75>A | 90-94</option>
@@ -161,10 +167,12 @@
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
-                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours(),Calgrade()"
-                                        style="width: 90px;" id="floatingHours" placeholder="الساعات">
+                                <td><input type="number" class="form-control  numberOfHours"
+                                        oninput=" countHours(),Calgrade()" style="width: 90px;" id="floatingHours"
+                                        placeholder="الساعات">
                                 </td>
-                                <td><select class="subjectRating form-control" style="width: 98px;">
+                                <td><select class="subjectRating form-control" oninput="Calgrade()"
+                                        style="width: 98px;">
                                         <option value="">الدرجة</option>
                                         <option value=5>A+|95-100</option>
                                         <option value=4.75>A | 90-94</option>
@@ -182,25 +190,26 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button class=" btn btn-outline-light " id="addRow" onclick="addRow(),countHours(),Calgrade()">+</button>
-                    <button class=" btn btn-outline-light " id="removeRow" onclick="removeRow(),countHours(),Calgrade()">-</button>
+                    <button class=" btn btn-outline-light " id="addRow"
+                        onclick="addRow(),countHours(),Calgrade()">+</button>
+                    <button class=" btn btn-outline-light " id="removeRow"
+                        onclick="removeRow(),countHours(),Calgrade()">-</button>
 
 
                 </div>
                 <div class="container mt-3">
-                    <div class="row bg-light mx-2">
-                        <div class="  d-flex bg-light justify-content-evenly mt-2 ">
-                            <h6 id="semGpa" class="lead ">معدلك الفصلي :</h6>
-                            <h6 id="culmGpa" class="lead ">معدلك التراكمي :</h6>
-                        </div>
-                    </div>
+ 
 
-                    <div class=" bg-white mt-2 shadow-lg" style="height: 2px; width: 519;"></div>
+                    <div class=" bg-light m-2 " style="height: 2px; width: 519;"></div>
 
-                    <div class="row bg-light mt-2 mx-2 ">
-                        <div class="  d-flex bg-light justify-content-evenly mt-2 borde ">
-                            <h6 id="tHour" class="lead "> مجموع الساعات :</h6>
-                            <h6 id="sumPoint" class="lead ">عدد النقاط :</h6>
+                    <div class="row bg-transparent text-light mx-2  pt-2">
+                        <div class="  bg-transparent  align-items-start align-content-end ">
+                           
+                            <p id="tHour" class=" " style="font-size: 19px;"> مجموع الساعات :</p>
+                    
+                            <p id="sumPoint" class=" " style="font-size: 19px;">عدد النقاط :</p>
+                            <p id="semGpa" class=" " style="font-size: 19px;">معدلك الفصلي :</p>
+                            <p id="culmGpa" class=" " style="font-size: 19px;">معدلك التراكمي :</p>
                         </div>
                     </div>
                 </div>
@@ -208,7 +217,7 @@
 
     </section>
 
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
