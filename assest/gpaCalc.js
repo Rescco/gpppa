@@ -107,13 +107,7 @@ function addRow() {
 
 // حذف صف جديد
 
-function removeRow() {
 
-    var row = table.deleteRow(-1);
-
-   
-
-}
 
 
 
