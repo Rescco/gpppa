@@ -74,12 +74,12 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12 mt-3 px-5 flex-column justify-content-center   ">
                     <div class="form-floating mb-3 flex-column mt-md-5 labelO">
-                        <input type="number" oninput="cla()" class="form-control " id="cGpa"
+                        <input type="number" oninput="cla(),Calgrade()" class="form-control " id="cGpa"
                             placeholder="name@example.com">
                         <label for="">المعدل الحالي</label>
                     </div>
                     <div class="form-floating ">
-                        <input type="number" oninput="cla(),countHours()" class="form-control" id="cHours"
+                        <input type="number" oninput="cla(),countHours(),Calgrade()" class="form-control" id="cHours"
                             placeholder=".">
                         <label for="">عدد الساعات</label>
                     </div>
@@ -104,7 +104,7 @@
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours()"
+                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours(),Calgrade()"
                                         style="width: 90px;" id="floatingHours" placeholder="الساعات">
                                 </td>
                                 <td><select class="subjectRating form-control" style="width: 98px;">
@@ -123,7 +123,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours()"
+                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours(),Calgrade()"
                                         style="width: 90px;" id="floatingHours" placeholder="الساعات">
                                 </td>
                                 <td><select class="subjectRating form-control" style="width: 98px;">
@@ -136,17 +136,17 @@
                                         <option value=3>C | 70-74</option>
                                         <option value=2.5>D+ | 65-69</option>
                                         <option value=2>D | 60-64</option>
-                                    <option value=1>F</option>
+                                        <option value=1>F</option>
                                     </select></td>
 
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
-                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours()"
+                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours(),Calgrade()"
                                         style="width: 90px;" id="floatingHours" placeholder="الساعات">
                                 </td>
                                 <td><select class="subjectRating form-control " style="width: 98px;">
-                                        <option  >الدرجة</option>
+                                        <option value="">الدرجة</option>
                                         <option value=5>A+|95-100</option>
                                         <option value=4.75>A | 90-94</option>
                                         <option value=4.5>B+| 85-89</option>
@@ -155,13 +155,13 @@
                                         <option value=3>C | 70-74</option>
                                         <option value=2.5>D+ | 65-69</option>
                                         <option value=2>D | 60-64</option>
-                                    <option value=1>F</option>
+                                        <option value=1>F</option>
                                     </select></td>
 
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
-                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours()"
+                                <td><input type="number" class="form-control  numberOfHours" oninput=" countHours(),Calgrade()"
                                         style="width: 90px;" id="floatingHours" placeholder="الساعات">
                                 </td>
                                 <td><select class="subjectRating form-control" style="width: 98px;">
@@ -182,16 +182,16 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button class=" btn btn-outline-light " id="addRow" onclick="addRow(),countHours()">+</button>
-                    <button class=" btn btn-outline-light " id="removeRow" onclick="removeRow(),countHours()">-</button>
+                    <button class=" btn btn-outline-light " id="addRow" onclick="addRow(),countHours(),Calgrade()">+</button>
+                    <button class=" btn btn-outline-light " id="removeRow" onclick="removeRow(),countHours(),Calgrade()">-</button>
 
 
                 </div>
                 <div class="container mt-3">
                     <div class="row bg-light mx-2">
                         <div class="  d-flex bg-light justify-content-evenly mt-2 ">
-                            <h3 class="lead ">معدلك الفصلي :</h3>
-                            <h3 class="lead ">معدلك التراكمي :</h3>
+                            <h3 id="semGpa" class="lead ">معدلك الفصلي :</h3>
+                            <h3 id="culmGpa" class="lead ">معدلك التراكمي :</h3>
                         </div>
                     </div>
 
@@ -200,7 +200,7 @@
                     <div class="row bg-light mt-2 mx-2 ">
                         <div class="  d-flex bg-light justify-content-evenly mt-2 borde ">
                             <h3 id="tHour" class="lead "> مجموع الساعات :</h3>
-                            <h3 class="lead ">عدد النقاط :</h3>
+                            <h3 id="sumPoint" class="lead ">عدد النقاط :</h3>
                         </div>
                     </div>
                 </div>
@@ -208,115 +208,17 @@
 
     </section>
 
-    <button onclick=" Calgrade() ">/**</button>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
         </script>
     <script src="assest/main.js"></script>
-    <script>
-
-
-        let tabel = document.querySelector('table');
-        let hour = document.getElementsByClassName('numberOfHours');
-        let dgree = document.getElementsByClassName('subjectRating')
-        /// حساب الساعات 
-        let totalHours = Number(0);// لتحويله الى رقم عشان اقدر اجمع 
-        totalHours = 0;
-        function countHours() {
-            let cureentHours = document.getElementById('cHours').value;
-            let totalHours = Number(0);// لتحويله الى رقم عشان اقدر اجمع 
-            totalHours = 0;
-            for (let index = 0; index < table.querySelectorAll("tbody tr").length; index++) {
-                hour[index].value ?
-                    totalHours += parseInt(document.getElementsByClassName('numberOfHours')[index].value)
-                    : 0
-
-
-            }
-
-
-            let t = totalHours + cureentHours;
-            let b = parseInt(cureentHours);
-            document.getElementById('tHour').innerHTML = '<h3 class="lead "> مجموع الساعات : ' + (totalHours + b) + '</h3>'
-        }
-
-
-
-        ////حساب نقاط المعدل الحالي
-
-        function cla() {
-
-            let cureentGpa = document.getElementById('cGpa').value;
-            let cureentHours = document.getElementById('cHours').value;
-
-            document.getElementById('nido').innerHTML = "النقاط " + cureentGpa * cureentHours;
-        }
-
-        // حساب عدد الدرجات الكلي 
-
-        function Calgrade() {
-
-            let dgreeAll = Number(0);// لتحويله الى رقم عشان اقدر اجمع 
-            let hourAll = Number(0);// لتحويله الى رقم عشان اقدر اجمع 
-            let points = 0;
-            let sumi = 0;
-
-            dgreeAll = 0;
-            for (let index = 0; index < table.querySelectorAll("tbody tr").length; index++) {
-                dgree[index].value ?
-                    dgreeAll += parseFloat((dgree)[index].value)
-                    : 0
-
-                hour[index].value ?
-                    hourAll += parseFloat((hour)[index].value)
-                    : 0
-
-                    points[index]= dgreeAll[index] * hourAll[index]; 
-                    
-                  console.log(points[index]);
-                document.getElementById("nio").innerHTML = "d Value = " + dgreeAll + "d Value = " + hourAll + " : " ;
-
-
-            }
-           console.log(points);
-           console.log(HTMLTableRowElement)
-
-
-        }
-        // اضافة صف جديد
-        let count = 5;
-
-        function addRow() {
-            var row = table.insertRow(-1);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-
-
-            cell1.innerHTML = '<th class="table lead text-danger">' + count + '</th>';
-            cell2.innerHTML = '<input type="number" class="form-control   numberOfHours" oninput="countHours()" style="width: 90px;id="floatingHours" placeholder="الساعات">';
-            cell3.innerHTML = '<select class="subjectRating form-control" style="width: 90px;"><option option value = "" > الدرجة</option ><option value=5 > A +</option ><option value=4.75 > A</option ><option value=4.5 > B +</option ><option value=4 > B</option ><option value=3.5 > C +</option ><option value=3 > C</option ><option value=2.5 > D +</option > <option value=2 > D</option ><option value=1 > F</option ></select >'
-
-            count++;
-        }
-
-        // حذف صف جديد
-
-        function removeRow() {
-
-            var row = table.deleteRow(-1);
-            count--;
-
-        }
+    <script src="gpaCalc.js"></script>
 
 
 
 
-
-
-
-    </script>
 </body>
 
 </html>
