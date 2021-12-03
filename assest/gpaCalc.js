@@ -66,9 +66,9 @@ function Calgrade() {
     culmutivrGpa = sumPoints / sumHours;
     if (isNaN(culmutivrGpa)) culmutivrGpa = "";
 
-    document.getElementById("semGpa").innerHTML = '<p id="semGpa"  style="font-size: 19px;"> معدلك الفصلي : ' + semesterGpa.toFixed(2) + '</p>';
+    document.getElementById("semGpa").innerHTML = '<p id="semGpa"  style="font-size: 19px;"> معدلك الفصلي : ' + semesterGpa.toFixed(2) + " " + gradeing(semesterGpa) + '</p>';
     document.getElementById('sumPoint').innerHTML = '<p id="sumPoint"  style="font-size: 19px;">عدد النقاط :' + sumPoints + '</p>';
-    document.getElementById('culmGpa').innerHTML = '<p id="culmGpa"  style="font-size: 19px;">معدلك التراكمي :' + culmutivrGpa.toFixed(2) + '</p>'
+    document.getElementById('culmGpa').innerHTML = '<p id="culmGpa"  style="font-size: 19px;">معدلك التراكمي :' + culmutivrGpa.toFixed(2) + " " + gradeing(culmutivrGpa) + '</p>'
 
 
 }
@@ -99,14 +99,31 @@ function addRow() {
 
 
     cell1.innerHTML = '<th class="table lead text-danger">' + count + '</th>';
-    cell2.innerHTML = '<input type="number" class="form-control   numberOfHours" oninput="countHours()" style="width: 90px;id="floatingHours" placeholder="الساعات">';
-    cell3.innerHTML = '<select class="subjectRating form-control" style="width: 98px;"> <option value="">الدرجة</option>   < option value = 5 > A +| 95 - 100</ > <option value=4.75 > A | 90 - 94</option > <option value=4.5 > B + | 85 - 89</option > <option value=4 > B | 80 - 84</option > <option value=3.5 > C + | 75 - 79</option > <option value=3 > C | 70 - 74</option > <option value=2.5 > D + | 65 - 69</option > <option value=2 > D | 60 - 64</option > <option value=1 > F</option ></select > '
+    cell2.innerHTML = '<input type="number" class="form-control   numberOfHours" oninput="countHours()" style="width: 90px;height: 38px;id="floatingHours" placeholder="الساعات">';
+    cell3.innerHTML = '<select class="subjectRating form-control" style="width: 98px;"> <option value="">الدرجة</option>   <option option value = 5 > A +| 95 - 100</option > <option value=4.75 > A | 90 - 94</option > <option value=4.5 > B + | 85 - 89</option > <option value=4 > B | 80 - 84</option > <option value=3.5 > C + | 75 - 79</option > <option value=3 > C | 70 - 74</option > <option value=2.5 > D + | 65 - 69</option > <option value=2 > D | 60 - 64</option > <option value=1 > F</option ></select > '
 
     count++;
 }
 
 // حذف صف جديد
+function gradeing(g) {
 
+    if (g >= 4.5) {
+        de = "ممتاز";
+    }
+    else if (g >= 3.75) {
+        de = "جيد جداً";
+    }
+    else if (g >= 2.75) {
+        de = "جيد ";
+    }
+    else if (g >= 2) {
+        de = "مقبول ";
+    }
+
+
+    return de;
+}
 
 
 

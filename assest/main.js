@@ -1,6 +1,6 @@
 let totalHousrs = 0;
 let dgrees = [90, 99, 80, 88, 80];
-let units = [4, 3, 2, 4, 3,];
+let units = [1, 3, 2, 4, 3,];
 let totalDgree = 0;
 let counter = 1;
 let points = 0
@@ -52,33 +52,21 @@ for (i = 0; i < dgrees.length; i++) {
 }
 
 // Return grade as -- | String | 
-function gradeing(g, de) {
+function gradeing(g) {
 
-    if (g >= 4.75) {
-        de = "Exceptional";
+    if (g >= 4.5) {
+        de = "ممتاز";
     }
-    else if (g >= 4.5) {
-        de = "Excellent";
+    else if (g >= 3.75) {
+        de = "جيد جداً";
     }
-    else if (g >= 4) {
-        de = "Superior";
+    else if (g >= 2.75) {
+        de = "جيد ";
     }
-    else if (g >= 3.5) {
-        de = "Very Good";
+    else if (g >= 2) {
+        de = "مقبول ";
     }
-    else if (g >= 3.0) {
-        de = "Above Average";
-    }
-    else if (g >= 2.5) {
-
-        de = "Good";
-    }
-    else if (g >= 2.0) {
-        de = "Good";
-    }
-    else {
-        de = "ما يدخلك بيتكم ";
-    }
+  
 
     return de;
 }
@@ -91,14 +79,14 @@ console.log("-------------------------------------------------------------------
 console.log(`the current points = ${points}`)
 //عدد النقاط الحالي 
 console.log("------------------------------------------------------------------------------")
-console.log(`the cumulative points : ${cumPoint}`);
+console.log(`the cumulative points : ${cumPoint.toFixed(2)}`);
 // المغدل التراكمي الحالي 
 console.log("------------------------------------------------------------------------------");
-console.log(`Your cumulative GPA : ${cumGpa} |  ${gradeing(cumGpa, Cumgrade)}`);
+console.log(`Your cumulative GPA : ${cumGpa.toFixed(2)} |  ${gradeing(cumGpa, Cumgrade)}`);
 // معدل هذا الفصل
 console.log("------------------------------------------------------------------------------");
 console.log(`Your GPA : ${gpa} |  ${gradeing(gpa, grade)}`);
 // المعدل التراكمي الجديد 
 console.log("------------------------------------------------------------------------------")
-console.log(`Your new cumulative GPA : ${newCgpa} |  ${gradeing(newCgpa, newGrade)}`);
+console.log(`Your new cumulative GPA : ${newCgpa.toFixed(2)} |  ${gradeing(newCgpa, newGrade)}`);
 
