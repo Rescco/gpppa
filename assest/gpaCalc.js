@@ -66,9 +66,9 @@ function Calgrade() {
     culmutivrGpa = sumPoints / sumHours;
     if (isNaN(culmutivrGpa) || culmutivrGpa === Infinity ) culmutivrGpa = "";
 
-    document.getElementById("semGpa").innerHTML = '<p id="semGpa"  style="font-size: 19px;"> معدلك الفصلي : ' + semesterGpa.toFixed(2) + " " + gradeing(semesterGpa) + '</p>';
-    document.getElementById('sumPoint').innerHTML = '<p id="sumPoint"  style="font-size: 19px;">عدد النقاط :' + sumPoints + '</p>';
-    document.getElementById('culmGpa').innerHTML = '<p id="culmGpa"  style="font-size: 19px;">معدلك التراكمي :' + culmutivrGpa.toFixed(2) + " " + gradeing(culmutivrGpa) + '</p>'
+    document.getElementById("semGpa").innerHTML = '<p id="semGpa"  style="font-size: 19px;"> معدلك الفصلي :' + semesterGpa.toFixed(2) + " " + gradeing(semesterGpa) + '</p>';
+    document.getElementById('sumPoint').innerHTML = '<p id="sumPoint"  style="font-size: 19px;">عدد النقاط :' + sumPoints.toFixed(2) + '</p>';
+    document.getElementById('culmGpa').innerHTML = '<p id="culmGpa"  style="font-size: 19px;">معدلك التراكمي:' + culmutivrGpa.toFixed(2) + " " + gradeing(culmutivrGpa) + '</p>'
 
 
 }
@@ -84,7 +84,7 @@ function cla(a) {
 
 
     currentPoints = cureentGpa * cureentHours;
-    document.getElementById('nido').innerHTML = "النقاط الحالية " + currentPoints;
+    document.getElementById('nido').innerHTML = "النقاط الحالية " + currentPoints.toFixed(2);
 
     return currentPoints + a;
 }
@@ -92,7 +92,7 @@ function cla(a) {
 let count = 5;
 
 function addRow() {
-    var row = table.insertRow(-1);
+    var row = tabel.insertRow(-1);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
