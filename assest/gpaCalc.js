@@ -89,7 +89,7 @@ function cla(a) {
     return currentPoints + a;
 }
 // اضافة صف جديد
-let count = 5;
+var count = 5;
 
 function addRow() {
     var row = tabel.insertRow(-1);
@@ -103,6 +103,13 @@ function addRow() {
     cell3.innerHTML = '<select class="subjectRating form-control" oninput="Calgrade()" style="width: 98px;"> <option value="">الدرجة</option>   <option option value = 5 > A +| 95 - 100</option > <option value=4.75 > A | 90 - 94</option > <option value=4.5 > B + | 85 - 89</option > <option value=4 > B | 80 - 84</option > <option value=3.5 > C + | 75 - 79</option > <option value=3 > C | 70 - 74</option > <option value=2.5 > D + | 65 - 69</option > <option value=2 > D | 60 - 64</option > <option value=1 > F</option ></select > '
 
     count++;
+}
+function removeRow() {
+
+    document.querySelector("table").deleteRow(-1);
+
+    count--;
+
 }
 
 // حذف صف جديد
@@ -124,6 +131,9 @@ function gradeing(g) {
 
     return de;
 }
+
+
+
 
 
 
