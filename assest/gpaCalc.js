@@ -98,7 +98,7 @@ function addRow() {
     var cell3 = row.insertCell(2);
 
 
-    cell1.innerHTML = '<th class="table lead text-danger">' + count + '</th>';
+    cell1.innerHTML = '<th class="table lead text-danger"><strong>' + count + '</strong> </th>';
     cell2.innerHTML = '<select type="number" class="form-control  numberOfHours" oninput=" countHours(),Calgrade()"style = "width: 90px;height: 38px;" ><option value="">الساعات</option> <option value=1 > 1</option ><option value=2 > 2</option > <option value=3 > 3</option ><option value=4 > 4</option > </select >';
     cell3.innerHTML = '<select class="subjectRating form-control" oninput="Calgrade()" style="width: 98px;"> <option value="">الدرجة</option>   <option option value = 5 > A +| 95 - 100</option > <option value=4.75 > A | 90 - 94</option > <option value=4.5 > B + | 85 - 89</option > <option value=4 > B | 80 - 84</option > <option value=3.5 > C + | 75 - 79</option > <option value=3 > C | 70 - 74</option > <option value=2.5 > D + | 65 - 69</option > <option value=2 > D | 60 - 64</option > <option value=1 > F</option ></select > '
 
